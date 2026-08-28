@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — PinMaster Automate</title>
-<meta name="description" content="Privacy policy for PinMaster Automate, a private Pinterest content-scheduling tool.">
+<meta name="description" content="Privacy policy for PinMaster Automate, a Pinterest content-scheduling service.">
 <link rel="canonical" href="https://novamira-my.github.io/pinmaster-automate/privacy/">
 <meta name="robots" content="index, follow">
 <style>
@@ -38,6 +38,7 @@
   main { max-width: 46rem; margin: 0 auto; }
   h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -.01em; }
   h2 { font-size: 1.15rem; margin: 2.75rem 0 .75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); letter-spacing: -.005em; }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
   h2:first-of-type { border-top: 0; }
   p, li { margin: 0 0 .85rem; }
   ul { padding-left: 1.25rem; }
@@ -48,13 +49,21 @@
     border-radius: 3px;
     font: .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
+  blockquote {
+    margin: 0 0 1.25rem;
+    padding: .9rem 1.1rem;
+    background: var(--code-bg);
+    border-radius: 5px;
+    font-size: .95rem;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
   .meta { color: var(--muted); font-size: .9rem; margin: 0 0 2.5rem; }
   .meta span { display: block; }
-  .status { background: var(--code-bg); padding: .9rem 1.1rem; border-radius: 5px; font-size: .92rem; margin: 0 0 2rem; }
   .table-wrap { overflow-x: auto; margin: 0 0 1.25rem; }
-  table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 34rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 32rem; }
   th, td { text-align: left; vertical-align: top; padding: .55rem .7rem; border-bottom: 1px solid var(--rule); }
-  th { font-weight: 600; white-space: nowrap; }
+  th { font-weight: 600; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
   @media print {
     body { padding: 0; font-size: 11pt; }
@@ -72,128 +81,151 @@
   <span><strong>Last updated:</strong> 28 August 2026</span>
 </p>
 
-<p class="status"><strong>Development status.</strong> The App is in active development and is not yet operating in production. Infrastructure providers are described in general terms in sections 6, 8 and 11 until deployment is finalised; specific current details are available on request to <a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a>.</p>
-
-<h2>1. Who operates this application</h2>
-<p>PinMaster Automate (the "App") is a private content-scheduling tool operated by Novamira ("we", "us", "our"), reachable at <a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a>.</p>
-<p>The App is <strong>not a public service and is not offered to other customers</strong>. It is used exclusively by its operator to publish content to Pinterest business accounts that the operator personally owns and controls. There are no other users, no customer accounts, and no third-party data.</p>
-
-<h2>2. Scope of this policy</h2>
-<p>This policy describes what data the App processes, why, how it is protected, and how it is deleted.</p>
-<p>It does not cover Pinterest itself. Once a pin is published, Pinterest's own privacy policy governs that content: <a href="https://policy.pinterest.com/privacy-policy">policy.pinterest.com/privacy-policy</a></p>
-
-<h2>3. What data the App processes</h2>
+<blockquote>
+<p><strong>Development status.</strong> PinMaster Automate is in active development and is not yet open to users. Infrastructure providers are described in general terms in sections 6, 7 and 9 until deployment is finalised; specific current details are available on request to clicknquest@gmail.com.</p>
+</blockquote>
+<h2>1. Who we are</h2>
+<p>PinMaster Automate (the "Service") is operated by Novamira ("we", "us", "our"), reachable at clicknquest@gmail.com.</p>
+<p>We are the data controller for the personal data described in this policy.</p>
+<h2>2. What the Service does</h2>
+<p>PinMaster Automate lets you schedule and publish content to Pinterest business accounts that you own. You connect your own Pinterest accounts through Pinterest's official authorisation flow, upload your own images, supply your own titles and descriptions, and choose when each pin should publish.</p>
+<p>It is a delivery tool. It does not write, rewrite, or alter your content, and it has no engagement features.</p>
+<h2>3. What data we process</h2>
+<h3>Data you give us</h3>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Category</th><th>Examples</th><th>Source</th><th>Purpose</th></tr></thead>
+<thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
 <tbody>
-<tr><td>Pinterest OAuth credentials</td><td>Access token, refresh token, token expiry</td><td>Pinterest, after the operator authorizes the App</td><td>To call the Pinterest API v5 on the operator's behalf</td></tr>
-<tr><td>Connected account identifiers</td><td>Pinterest user ID, username, operator-chosen label, connection status</td><td>Pinterest API (<code>user_accounts:read</code>)</td><td>To identify which connected account a board, campaign, or pin belongs to</td></tr>
-<tr><td>Uploaded media</td><td>Image files, original filename, MIME type, pixel dimensions, SHA-256 hash</td><td>Uploaded by the operator</td><td>To be published as pin images</td></tr>
-<tr><td>Pin metadata</td><td>Title, description, destination link, destination board ID, scheduled publish time, state, Pinterest pin ID, attempt count, failure reason</td><td>Entered or imported by the operator</td><td>Core scheduling and publishing function</td></tr>
-<tr><td>API usage counters</td><td>Endpoint category, call count per period</td><td>Derived from Pinterest API responses</td><td>To stay within Pinterest's documented rate limits</td></tr>
-<tr><td>Operational logs</td><td>Timestamps, correlation IDs, HTTP status codes, error messages</td><td>Generated by the App</td><td>To diagnose failed publishes and support retries</td></tr>
+<tr><td>Account details</td><td>Email address, password (stored only as a cryptographic hash), email verification status, account creation date</td><td>To create and secure your account, and to contact you about the Service</td></tr>
+<tr><td>Uploaded media</td><td>Image files, original filename, MIME type, pixel dimensions, SHA-256 hash</td><td>To publish as pin images</td></tr>
+<tr><td>Pin content</td><td>Titles, descriptions, destination links, destination board ID, scheduled publish times</td><td>The core scheduling and publishing function</td></tr>
 </tbody>
 </table>
 </div>
-<p>No other categories of data are collected.</p>
-<p><strong>Board names and board lists are not stored.</strong> They are fetched from the Pinterest API each time the operator opens a board selector, and discarded afterwards. The only board information retained is the destination board's identifier on the pin record, which is required to publish that pin to the board the operator chose.</p>
-
-<h2>4. What the App does not do</h2>
+<h3>Data we receive from Pinterest when you connect an account</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Authorisation tokens</td><td>Access token, refresh token, token expiry</td><td>To act on your behalf on the account you authorised</td></tr>
+<tr><td>Connected account identifiers</td><td>Pinterest user ID, username, the label you give the account, connection status</td><td>To show you which of your accounts is which, and to route each pin correctly</td></tr>
+</tbody>
+</table>
+</div>
+<p>Board names and board lists are <strong>not</strong> stored. They are fetched from Pinterest each time you open a board selector and discarded afterwards. The only board information retained is the destination board's identifier on the pin record.</p>
+<h3>Data generated by using the Service</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Publishing records</td><td>Pin state, Pinterest pin ID, attempt count, failure reason</td><td>To show you what published, what failed, and why</td></tr>
+<tr><td>Usage counters</td><td>Endpoint category, call counts per period, your usage against your account limits</td><td>To stay within Pinterest's rate limits and enforce fair use</td></tr>
+<tr><td>Technical logs</td><td>Timestamps, correlation IDs, IP address, HTTP status codes, error messages</td><td>To diagnose failed publishes, and to detect and prevent abuse of the Service</td></tr>
+<tr><td>Session data</td><td>A session cookie that keeps you signed in</td><td>Strictly necessary to operate a signed-in service</td></tr>
+</tbody>
+</table>
+</div>
+<p>We use no advertising networks, no third-party analytics, and no tracking pixels. The session cookie is the only cookie we set, and it is essential to signing in.</p>
+<h2>4. What we do not do</h2>
 <ul>
-<li><strong>No passwords.</strong> The App never asks for, stores, or transmits a Pinterest password. Authentication is Pinterest OAuth 2.0 only.</li>
-<li><strong>No data about other Pinterest users.</strong> The App does not read, collect, store, or infer data about anyone other than the connected account owner. No follower lists, no other users' profiles, no scraping of public Pinterest content.</li>
-<li><strong>No unofficial access.</strong> The App uses only the official Pinterest API v5. It does not use browser automation, undocumented endpoints, or any technique intended to evade platform controls or rate limits.</li>
-<li><strong>No sale or sharing.</strong> Data is never sold, rented, licensed, or disclosed to third parties for advertising, profiling, or any other purpose.</li>
-<li><strong>No model training.</strong> Neither Pinterest data nor uploaded media is used to train machine-learning models.</li>
-<li><strong>No tracking.</strong> The App runs no advertising networks, no analytics products, and no tracking pixels. It sets no third-party cookies.</li>
-<li><strong>No engagement automation.</strong> The App does not follow, unfollow, comment, like, repin, or message on the operator's behalf. It publishes pins the operator has authored and nothing else.</li>
-<li><strong>No content generation.</strong> The App does not write, rewrite, spin, or otherwise alter titles or descriptions. Text is transmitted to Pinterest exactly as the operator wrote it.</li>
+<li><strong>We never ask for your Pinterest password.</strong> Authorisation is always through Pinterest's own OAuth flow. If anything ever asks for your Pinterest password on our behalf, it is not us.</li>
+<li><strong>We do not access Pinterest accounts you have not connected.</strong></li>
+<li><strong>We do not collect data about other Pinterest users.</strong> No follower lists, no other people's profiles, no scraping of public Pinterest content.</li>
+<li><strong>We do not combine your data with another user's.</strong> Each account's data is isolated — see section 7.</li>
+<li><strong>We do not sell, rent, or share your data</strong> with third parties for advertising, profiling, or any other purpose.</li>
+<li><strong>We do not use your content or your Pinterest data to train machine-learning models.</strong></li>
+<li><strong>We do not use unofficial access methods.</strong> The Service uses only the official Pinterest API v5. No browser automation, no undocumented endpoints, no techniques to evade platform controls or rate limits.</li>
+<li><strong>We do not perform engagement automation.</strong> No following, commenting, liking, repinning, or messaging.</li>
 </ul>
-
 <h2>5. Legal basis for processing</h2>
-<p>Where the GDPR applies, processing rests on:</p>
+<p>Where the GDPR applies, we rely on:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Basis</th><th>For what</th></tr></thead>
+<tbody>
+<tr><td>Performance of a contract</td><td>Operating your account and publishing the content you schedule</td></tr>
+<tr><td>Consent</td><td>Accessing your Pinterest account. You give this through Pinterest's own authorisation screen, and can withdraw it at any time — see section 10</td></tr>
+<tr><td>Legitimate interests</td><td>Keeping the Service secure, preventing abuse and spam, and diagnosing faults. We weigh this against your rights and keep the data involved to a minimum</td></tr>
+<tr><td>Legal obligation</td><td>Where we must retain or disclose data by law</td></tr>
+</tbody>
+</table>
+</div>
+<h2>6. Who we share data with</h2>
+<p>We do not sell or share your data. It is disclosed only to the following, and only as needed to run the Service:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Recipient</th><th>What they receive</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Pinterest</td><td>The image, title, description, destination link, board ID and publish time — for pins you schedule</td><td>Required to publish your pin</td></tr>
+<tr><td>Cloud infrastructure provider</td><td>Application data at rest, including the database and logs</td><td>Server hosting</td></tr>
+<tr><td>Cloudflare R2</td><td>Your uploaded image files</td><td>Object storage</td></tr>
+<tr><td>Key-management service</td><td>Encryption key material</td><td>Custody of the master encryption key</td></tr>
+<tr><td>Email delivery provider</td><td>Your email address and the message content</td><td>Verification and password-reset emails</td></tr>
+</tbody>
+</table>
+</div>
+<p>The specific providers are named on request to clicknquest@gmail.com. No data is disclosed to anyone else except where required by law.</p>
+<h2>7. How your data is protected</h2>
 <ul>
-<li><strong>Performance of a contract / legitimate interests</strong> — operating a tool at the request of, and solely for, its own operator.</li>
-<li><strong>Consent</strong> — authorization to access a Pinterest account is granted through Pinterest's own OAuth consent screen and can be withdrawn at any time (see section 9).</li>
+<li><strong>Isolation between accounts.</strong> Every record belongs to exactly one account, and every query is filtered by account. This is enforced in the data access layer rather than left to individual queries, and it is covered by tests that attempt cross-account access and expect it to fail.</li>
+<li><strong>Token encryption.</strong> Pinterest access and refresh tokens are encrypted at rest with AES-256-GCM envelope encryption. The master key is held in a managed key-management service, never in source code or plain environment variables.</li>
+<li><strong>Password storage.</strong> Passwords are stored only as a hash produced by a function designed for password hashing. We cannot read your password, and we will never email it to you.</li>
+<li><strong>Private media storage.</strong> Uploaded images are stored in a private object-storage bucket, partitioned per account. There is no public bucket and no CDN. Objects are never publicly readable; your browser reaches them only through short-lived signed URLs issued to your own session.</li>
+<li><strong>Images are never exposed at a public URL.</strong> Pins are created using the Pinterest API's <code>image_base64</code> source type, so image data travels from private storage into a single API request. It is never placed at a fetchable public address.</li>
+<li><strong>Transport security.</strong> All traffic is encrypted with TLS.</li>
+<li><strong>Least privilege.</strong> We request only the Pinterest permissions we actively use — see section 8.</li>
 </ul>
-<p>The only data subject is the operator, who is also the controller.</p>
-
-<h2>6. How data is stored and protected</h2>
-<ul>
-<li><strong>Token encryption.</strong> OAuth access and refresh tokens are encrypted at rest using AES-256-GCM envelope encryption. The master key is held in a managed key-management service. Keys are never stored in source code or in plain environment variables.</li>
-<li><strong>Private media storage.</strong> Uploaded images are stored in a <strong>private</strong> object-storage bucket (Cloudflare R2). There is no public bucket and no CDN. Objects are never publicly readable. Browser access is granted only through short-lived presigned URLs issued to the operator's authenticated session.</li>
-<li><strong>Images are never exposed at a public URL.</strong> Pins are created using the Pinterest API's <code>image_base64</code> source type, meaning image data travels directly from our private storage into a single API request to Pinterest. It is never placed at a fetchable public address.</li>
-<li><strong>Transport security.</strong> All traffic between the browser, the App, the object store, and the Pinterest API is encrypted with TLS.</li>
-<li><strong>Access control.</strong> The application interface is restricted to the operator at the network layer. There is no public sign-up and no shared access.</li>
-<li><strong>Least privilege.</strong> The App requests only the OAuth scopes it actively uses (see section 7).</li>
-</ul>
-
-<h2>7. Pinterest permissions requested</h2>
+<h2>8. Pinterest permissions we request</h2>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Scope</th><th>Why it is required</th></tr></thead>
 <tbody>
-<tr><td><code>user_accounts:read</code></td><td>To identify a connected account and display it correctly in the account switcher</td></tr>
-<tr><td><code>boards:read</code></td><td>To fetch the account's boards, live, so the operator can select a destination, and to verify a board still exists before a pin is scheduled against it. Board lists are not retained.</td></tr>
-<tr><td><code>pins:read</code></td><td>To confirm a scheduled pin was actually created and to report accurate per-pin status back to the operator</td></tr>
-<tr><td><code>pins:write</code></td><td>To create the pins the operator has scheduled. This is the App's core function.</td></tr>
+<tr><td><code>user_accounts:read</code></td><td>To identify a connected account so you can tell your accounts apart</td></tr>
+<tr><td><code>boards:read</code></td><td>To fetch your boards, live, so you can choose a destination, and to check a board still exists before scheduling against it. Board lists are not retained</td></tr>
+<tr><td><code>pins:read</code></td><td>To confirm a scheduled pin was actually created, and to report accurate status back to you</td></tr>
+<tr><td><code>pins:write</code></td><td>To create the pins you schedule. This is the core function of the Service</td></tr>
 </tbody>
 </table>
 </div>
-
-<h2>8. Third parties and subprocessors</h2>
-<p>Data is disclosed only to the following, and only as needed to operate the App:</p>
+<p>We do not request permission to create or modify boards, and we do not request analytics permissions.</p>
+<h2>9. Where your data is stored</h2>
+<p>Application data is stored in a single hosting region. Pinterest processes data in the United States and elsewhere under its own privacy policy. The specific hosting region is named on request.</p>
+<h2>10. Keeping, deleting, and disconnecting</h2>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Recipient</th><th>What it receives</th><th>Why</th></tr></thead>
+<thead><tr><th>Data</th><th>How long we keep it</th></tr></thead>
 <tbody>
-<tr><td>Pinterest</td><td>Pin image, title, description, destination link, board ID, scheduled publish time</td><td>Required to publish the pin</td></tr>
-<tr><td>Cloud infrastructure provider</td><td>Application data at rest (database, logs)</td><td>Server hosting</td></tr>
-<tr><td>Cloudflare R2</td><td>Uploaded image files</td><td>Object storage</td></tr>
-<tr><td>Key-management service</td><td>Encryption key material</td><td>Custody of the master encryption key</td></tr>
+<tr><td>Pinterest tokens</td><td>Until you disconnect the account or revoke access, then deleted immediately</td></tr>
+<tr><td>Connected account identifiers</td><td>Deleted when you disconnect that account</td></tr>
+<tr><td>Uploaded images and pin records</td><td>Until you delete them, or until you delete your account</td></tr>
+<tr><td>Account details</td><td>Until you delete your account</td></tr>
+<tr><td>Technical logs</td><td>Retained for 30 days, then deleted</td></tr>
 </tbody>
 </table>
 </div>
-<p>No data is disclosed to anyone else except where required by law.</p>
-
-<h2>9. Retention and deletion</h2>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Data</th><th>Retention</th></tr></thead>
-<tbody>
-<tr><td>OAuth tokens</td><td>Until the account is disconnected or access is revoked, then deleted immediately</td></tr>
-<tr><td>Connected account identifiers</td><td>Deleted when the account is disconnected</td></tr>
-<tr><td>Uploaded images and pin records</td><td>Retained until deleted by the operator</td></tr>
-<tr><td>Operational logs</td><td>Retained for 30 days, then deleted</td></tr>
-</tbody>
-</table>
-</div>
-<p><strong>Revoking access.</strong> Authorization can be withdrawn at any time from Pinterest (Settings → Security and permissions → Apps), independently of the App. The App detects a revoked token, stops issuing requests for that account, and marks it as requiring reconnection.</p>
-<p><strong>Deletion on request.</strong> A written request to <a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a> results in complete erasure of all stored data within 30 days.</p>
-
-<h2>10. Your rights</h2>
-<p>Subject to the Personal Data Protection Act 2010 (Malaysia) and, where applicable, the GDPR, you have the right to access, correct, erase, restrict processing of, port, and object to processing of your personal data, and to withdraw authorization at any time.</p>
-<p>Requests go to <a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a> and are answered within 30 days. Where the GDPR applies, you also have the right to lodge a complaint with your local supervisory authority.</p>
-
-<h2>11. International transfers</h2>
-<p>Application data is stored in a single hosting region. Pinterest processes data in the United States and elsewhere in accordance with its own privacy policy.</p>
-<p>The specific hosting region and infrastructure providers are named on request to <a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a>.</p>
-
+<p><strong>Disconnecting a Pinterest account.</strong> You can disconnect any connected account from within the Service at any time, which deletes its stored tokens immediately. You can also revoke our access directly from Pinterest, under Settings, then Security and permissions, then Apps. We detect a revoked token, stop making requests for that account, and mark it as needing reconnection.</p>
+<p><strong>Deleting your account.</strong> You can delete your PinMaster Automate account from your account settings. This is a real deletion, not a flag: your uploaded images are removed from storage, your pin records and account details are deleted, and every Pinterest token is destroyed. Pins already published to Pinterest remain on Pinterest — they are yours, and only you can remove them there.</p>
+<p>You can also request deletion by writing to clicknquest@gmail.com, and we will complete it within 30 days.</p>
+<h2>11. Your rights</h2>
+<p>Under the Personal Data Protection Act 2010 (Malaysia) and, where it applies, the GDPR, you have the right to:</p>
+<ul>
+<li>access the personal data we hold about you</li>
+<li>have inaccurate data corrected</li>
+<li>have your data erased</li>
+<li>restrict or object to how we process it</li>
+<li>receive your data in a portable form</li>
+<li>withdraw consent at any time, including by disconnecting a Pinterest account</li>
+</ul>
+<p>Write to clicknquest@gmail.com and we will respond within 30 days. Where the GDPR applies, you may also complain to your local supervisory authority.</p>
 <h2>12. Children</h2>
-<p>The App is not directed at children. It is a business tool used by a single adult operator, and it does not knowingly process data relating to anyone under 13 (or under 16 in the EEA).</p>
-
+<p>The Service is not for children. You must be at least 13 years old to use it, and at least 16 in the EEA. We do not knowingly collect data from anyone below those ages. If you believe a child has created an account, write to clicknquest@gmail.com and we will delete it.</p>
 <h2>13. Security incidents</h2>
-<p>In the event of a personal-data breach, we will notify affected parties and, where the GDPR applies, the relevant supervisory authority without undue delay and within 72 hours of becoming aware of it.</p>
-
+<p>If a personal-data breach occurs, we will notify affected users and, where the GDPR applies, the relevant supervisory authority, without undue delay and within 72 hours of becoming aware of it.</p>
 <h2>14. Changes to this policy</h2>
-<p>Any revision is published at this URL with an updated "Last updated" date. Material changes affecting how data is handled are noted at the top of the page.</p>
-
+<p>We publish any revision at this URL with an updated "Last updated" date. If a change materially affects how your data is handled, we will note it at the top of this page and, where the change is significant, email you.</p>
 <h2>15. Contact</h2>
-<p>
-Novamira<br>
-<a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a>
-</p>
+<p>Novamira</p>
+<p>clicknquest@gmail.com</p>
 
 <footer>PinMaster Automate — privacy policy, last updated 28 August 2026. · <a href="../terms/">Terms of Service</a></footer>
 
