@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — PinMaster Automate</title>
+<meta name="description" content="Terms of service for PinMaster Automate, a private Pinterest content-scheduling tool.">
+<link rel="canonical" href="https://novamira-my.github.io/pinmaster-automate/terms/">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #5c5c66;
+    --rule: #e2e2e8;
+    --accent: #b0102b;
+    --code-bg: #f4f4f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16161a;
+      --fg: #e8e8ec;
+      --muted: #a0a0ac;
+      --rule: #2e2e36;
+      --accent: #ff7a90;
+      --code-bg: #22222a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem 6rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -.01em; }
+  h2 { font-size: 1.15rem; margin: 2.75rem 0 .75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); letter-spacing: -.005em; }
+  h2:first-of-type { border-top: 0; }
+  p, li { margin: 0 0 .85rem; }
+  ul { padding-left: 1.25rem; }
+  a { color: var(--accent); }
+  code {
+    background: var(--code-bg);
+    padding: .1em .35em;
+    border-radius: 3px;
+    font: .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .meta { color: var(--muted); font-size: .9rem; margin: 0 0 2.5rem; }
+  .meta span { display: block; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+  @media print {
+    body { padding: 0; font-size: 11pt; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Terms of Service — PinMaster Automate</h1>
+<p class="meta">
+  <span><strong>Effective date:</strong> 28 August 2026</span>
+  <span><strong>Last updated:</strong> 28 August 2026</span>
+</p>
+
+<h2>1. What this document covers</h2>
+<p>PinMaster Automate (the "App") is a private content-scheduling tool operated by Novamira ("we", "us", "our").</p>
+<p>These Terms govern access to and use of the App by any person we authorize to use it. The App is <strong>not a public service</strong>. There is no sign-up, no subscription, and no offering to third parties. It exists to publish content to Pinterest business accounts that we own and control.</p>
+<p>If you are reading this because you are reviewing the App on behalf of Pinterest, section 4 is the relevant one.</p>
+
+<h2>2. Who may use the App</h2>
+<p>Access is granted individually and at our discretion, and is restricted at the network level. There is no public registration.</p>
+<p>Anyone granted access agrees to:</p>
+<ul>
+<li>use the App only for its intended purpose — scheduling and publishing content to connected Pinterest accounts;</li>
+<li>not share access credentials with anyone;</li>
+<li>not attempt to circumvent the App's access controls, rate limiting, or validation;</li>
+<li>comply with these Terms and with Pinterest's own terms and policies.</li>
+</ul>
+<p>We may withdraw access at any time, for any reason, without notice.</p>
+
+<h2>3. Your content</h2>
+<p>Images, titles, descriptions, and links supplied to the App remain the property of whoever owned them beforehand. We claim no ownership over them.</p>
+<p>Anyone supplying content to the App represents that they have the right to publish it, and that publishing it does not infringe anyone else's copyright, trademark, or other rights.</p>
+<p>The App is a delivery tool. It does not create, edit, rewrite, or otherwise alter content. What is supplied is what is transmitted to Pinterest.</p>
+
+<h2>4. Relationship to Pinterest</h2>
+<p>The App is an independent application built on the public Pinterest API v5. It is <strong>not affiliated with, endorsed by, or sponsored by Pinterest, Inc.</strong></p>
+<p>Use of the App is subject to Pinterest's own terms, which take precedence over these Terms wherever the two touch:</p>
+<ul>
+<li><a href="https://policy.pinterest.com/terms-of-service">Pinterest Terms of Service</a></li>
+<li><a href="https://developers.pinterest.com/docs/reference/developer-guidelines/">Pinterest Developer Guidelines</a></li>
+<li><a href="https://policy.pinterest.com/community-guidelines">Pinterest Community Guidelines</a></li>
+</ul>
+<p>The App operates entirely through the official API using OAuth 2.0. It does not use browser automation, does not store Pinterest passwords, does not scrape Pinterest, does not automate engagement, and does not attempt to evade rate limits or platform controls. It throttles itself proactively against the published rate-limit headers.</p>
+<p>Pinterest may change, restrict, or withdraw API access at any time. If that happens, the App may stop working in whole or in part, and we have no obligation to provide a replacement.</p>
+
+<h2>5. Availability, scheduling, and accuracy</h2>
+<p><strong>The App is provided without any uptime or delivery guarantee.</strong></p>
+<p>This clause matters more than it usually would, so it is worth stating plainly: the Pinterest API does not support scheduled publication. A pin becomes public at the moment the App successfully creates it. The App therefore holds each pin until its scheduled time and sends it then.</p>
+<p>The practical consequence: if the App is unavailable when a pin is due — because of a server failure, a network outage, a Pinterest API error, maintenance, or anything else — that pin may be published late, or not published at all. The App applies a configurable grace period and marks anything outside it as failed rather than publishing it at an unintended time.</p>
+<p>Nothing in the App should be relied upon for time-critical publication.</p>
+
+<h2>6. No warranty</h2>
+<p>The App is provided "as is" and "as available", without warranties of any kind, whether express or implied, including any implied warranty of merchantability, fitness for a particular purpose, or non-infringement.</p>
+<p>We do not warrant that the App will be uninterrupted, timely, secure, or error-free, or that any particular pin will be published, published on time, or reach any particular audience.</p>
+
+<h2>7. Limitation of liability</h2>
+<p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or exemplary damages, or for any loss of profits, revenue, data, goodwill, or business opportunity, arising out of or relating to the App — including any pin that fails to publish, publishes late, or publishes to the wrong destination.</p>
+<p>Because the App is provided privately and free of charge, our total aggregate liability arising out of or relating to the App is limited to zero.</p>
+<p>Nothing in these Terms excludes liability that cannot be excluded under applicable law.</p>
+
+<h2>8. Changes</h2>
+<p>We may modify, suspend, or discontinue the App, in whole or in part, at any time and without notice.</p>
+<p>We may revise these Terms. The current version is always published at this URL with an updated "Last updated" date. Continued use after a revision constitutes acceptance of it.</p>
+
+<h2>9. Governing law</h2>
+<p>These Terms are governed by the laws of Malaysia, without regard to conflict-of-laws rules. Any dispute arising out of or relating to these Terms is subject to the exclusive jurisdiction of the courts of Malaysia.</p>
+
+<h2>10. Privacy</h2>
+<p>How the App handles data is described separately in the <a href="../privacy/">Privacy Policy</a>.</p>
+
+<h2>11. Contact</h2>
+<p>
+Novamira<br>
+<a href="mailto:clicknquest@gmail.com">clicknquest@gmail.com</a>
+</p>
+
+<footer>PinMaster Automate — terms of service, last updated 28 August 2026. · <a href="../privacy/">Privacy Policy</a></footer>
+
+</main>
+</body>
+</html>
